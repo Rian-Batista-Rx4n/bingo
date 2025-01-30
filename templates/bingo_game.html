@@ -7,7 +7,42 @@
     <title>Bingo</title>
 </head>
 <body>
+    <div id="numero_atual"></div>
 
+    <div id="cartela">
+        <div class="grid-container">
+            <div class="grid-letra">B</div>
+            <div class="grid-letra">I</div>
+            <div class="grid-letra">N</div>
+            <div class="grid-letra">G</div>
+            <div class="grid-letra">O</div>
+            <div class="grid-item"><div id="letra_B_linha_1">{{ numeros[0] }}</div></div>
+            <div class="grid-item"><div id="letra_I_linha_1">{{ numeros[5] }}</div></div>
+            <div class="grid-item"><div id="letra_N_linha_1">{{ numeros[10] }}</div></div>
+            <div class="grid-item"><div id="letra_G_linha_1">{{ numeros[15] }}</div></div>
+            <div class="grid-item"><div id="letra_O_linha_1">{{ numeros[20] }}</div></div>
+            <div class="grid-item"><div id="letra_B_linha_2">{{ numeros[1] }}</div></div>
+            <div class="grid-item"><div id="letra_I_linha_2">{{ numeros[6] }}</div></div>
+            <div class="grid-item"><div id="letra_N_linha_2">{{ numeros[11] }}</div></div>
+            <div class="grid-item"><div id="letra_G_linha_2">{{ numeros[16] }}</div></div>
+            <div class="grid-item"><div id="letra_O_linha_2">{{ numeros[21] }}</div></div>
+            <div class="grid-item"><div id="letra_B_linha_3">{{ numeros[2] }}</div></div>
+            <div class="grid-item"><div id="letra_I_linha_3">{{ numeros[7] }}</div></div>
+            <div class="grid-item"><div id="letra_N_linha_3"><img src="../static/images/FreeSpace.png" alt="freespace"></div></div>
+            <div class="grid-item"><div id="letra_G_linha_3">{{ numeros[17] }}</div></div>
+            <div class="grid-item"><div id="letra_O_linha_3">{{ numeros[22] }}</div></div>
+            <div class="grid-item"><div id="letra_B_linha_4">{{ numeros[3] }}</div></div>
+            <div class="grid-item"><div id="letra_I_linha_4">{{ numeros[8] }}</div></div>
+            <div class="grid-item"><div id="letra_N_linha_4">{{ numeros[13] }}</div></div>
+            <div class="grid-item"><div id="letra_G_linha_4">{{ numeros[18] }}</div></div>
+            <div class="grid-item"><div id="letra_O_linha_4">{{ numeros[23] }}</div></div>
+            <div class="grid-item"><div id="letra_B_linha_5">{{ numeros[4] }}</div></div>
+            <div class="grid-item"><div id="letra_I_linha_5">{{ numeros[9] }}</div></div>
+            <div class="grid-item"><div id="letra_N_linha_5">{{ numeros[14] }}</div></div>
+            <div class="grid-item"><div id="letra_G_linha_5">{{ numeros[19] }}</div></div>
+            <div class="grid-item"><div id="letra_O_linha_5">{{ numeros[24] }}</div></div>
+        </div>
+    </div>
 
     <script src="../static/js/bingo_game.js"></script>
 </body>
