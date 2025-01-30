@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, flash, session
+from flask import Flask, render_template, request, redirect, flash, session, jsonify
+from random import randint, sample
+from time import sleep as S
 import json
 import os
 
@@ -9,6 +11,8 @@ app.config['SECRET_KEY'] = 'RX4NRX4N'
 app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_TYPE'] = "filesystem"
 logado = False
+numeros = []
+numeros_disponiveis = list(range(1, 76))
 
 #Principal, abrir site, mandar para o cadastro!
 @app.route('/')
@@ -17,6 +21,16 @@ def home():
 
 #paginas de cadastro ou login
 #cadastro
+@app.route('/numero_aleatorio')
+def numero_aleatorio():
+    global numeros_disponiveis
+    
+    if not numeros_disponiveis:
+        return jsonify({'numero': None})  # Retorna None se todos os números foram sorteados
+    
+    numero = numeros_disponiveis.pop(randint(0, len(numeros_disponiveis) - 1))  # Remove um número aleatório da lista
+    return jsonify({'numero': numero})
+
 @app.route('/bingo_cadastro', methods=["POST"])
 def cadastro():
     nome_user = request.form.get('nome_user')
@@ -72,7 +86,49 @@ def login():
 @app.route('/bingo_game')
 def bingo_game():
     if 'logado' in session and session['logado']:
-        return render_template('bingo_game.html', usuario=session.get('usuario'))
+        for numero in range(25):
+            if numero < 5:
+                numero_aleatorio = randint(1, 15)
+                while True:
+                    if numero_aleatorio in numeros:
+                        numero_aleatorio = randint(1, 15)
+                    else:
+                        numeros.append(numero_aleatorio)
+                        break
+            elif numero < 10:
+                numero_aleatorio = randint(16, 30)
+                while True:
+                    if numero_aleatorio in numeros:
+                        numero_aleatorio = randint(16, 30)
+                    else:
+                        numeros.append(numero_aleatorio)
+                        break
+            elif numero < 15:
+                numero_aleatorio = randint(31, 45)
+                while True:
+                    if numero_aleatorio in numeros:
+                        numero_aleatorio = randint(31, 45)
+                    else:
+                        numeros.append(numero_aleatorio)
+                        break
+            elif numero < 20:
+                numero_aleatorio = randint(46, 60)
+                while True:
+                    if numero_aleatorio in numeros:
+                        numero_aleatorio = randint(46, 60)
+                    else:
+                        numeros.append(numero_aleatorio)
+                        break
+            elif numero <= 25:
+                numero_aleatorio = randint(61, 76)
+                while True:
+                    if numero_aleatorio in numeros:
+                        numero_aleatorio = randint(61, 75)
+                    else:
+                        numeros.append(numero_aleatorio)
+                        break
+
+        return render_template('bingo_game.html', usuario=session.get('usuario'), numeros=numeros)
     
     flash("Você precisa fazer login primeiro!")
     return redirect('/bingo_login')
