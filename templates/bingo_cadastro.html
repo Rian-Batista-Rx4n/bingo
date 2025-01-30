@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bingo_cadastro.css">
+    <title>Bingo - Cadastro</title>
+</head>
+<body>
+    <form action="/bingo_cadastro" method="POST">
+        <div id="quadro_cadastro">
+            <img src="../static/images/GrayWolf_512png.png" alt="bingo_logo" width="20%"><br>
+            <label for="nome_user">Nome de Usuário:</label>
+            <input type="text" name="nome_user" id="nome_user" required placeholder="Ex. Joaquim" maxlength="10"><br>
+            <label for="senha_user">Senha da Conta:</label>
+            <input type="password" name="senha_user" id="senha_user" required placeholder="Ex. 12345678" maxlength="8"><br>
+            <input type="submit" value="Cadastrar!"><br>
+            <input type="button" id="tenho_conta" value="Já tenho Conta!" onclick="window.location.href='/bingo_login'">
+        </div>
+    </form>
+    <footer>
+        <div id="quadro_footer">
+            <p>GitHub: <a href="https://github.com/Rian-Batista-Rx4n">Rian-Batista-Rx4n</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/rx4n.rx4n/">@rx4n.rx4n</a></p>
+            <p>Youtube: <a href="https://www.youtube.com/@Rx4n_">Rx4n</a></p>
+        </div>
+    </footer>
+    <script src="../static/js/bingo_cadastro.js"></script>
+</body>
+</html>
