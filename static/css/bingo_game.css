@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(0, 0, 32);
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+
+#cartela{
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    width: 20em;
+    height: 10em;
+}
+
+.grid-container {
+    background-color: rgb(46, 38, 146);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Cria 5 colunas de igual tamanho */
+    grid-gap: 10px 1px; /* Espaçamento entre as células */
+    border: 2px solid rgb(54, 222, 228); /* Borda ao redor do contêiner */
+    padding: 10px; /* Espaçamento interno no contêiner */
+  }
+  
+  .grid-item {
+    cursor: pointer;
+    color: black;
+    font-size: 2em;
+    text-align: center;
+    background-color: white; /* Cor de fundo das células */
+    border: 1px solid black; /* Borda em cada célula */
+    height: 50px; /* Altura fixa para as células */
+    width: 50px; /* Largura fixa para as células */
+  }
+  .grid-letra {
+    font: bold 3em Arial;
+    height: 50px; /* Altura fixa para as células */
+    width: 50px; /* Largura fixa para as células */
+  }
+
+#numero_atual {
+    margin: auto;
+    width: 2em;
+    height: 2em;
+    border-radius: 10%;
+    background-color: #6e51ee;
+    color: white;
+    text-align: center;
+    line-height: 2em;
+    font-size: 5em;
+}
+
+img {
+    width: 100%;
+}
